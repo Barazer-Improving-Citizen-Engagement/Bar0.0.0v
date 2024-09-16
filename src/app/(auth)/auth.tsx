@@ -15,8 +15,8 @@ import {
 import { useDispatch } from "react-redux";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
-import { signUp, login } from '../../services/auth'; // Adjust the path if needed
-import { AuthProvider } from '../../context/AuthContext';
+import { signUp, login } from '../../../services/auth'; // Adjust the path if needed
+import { AuthProvider } from '../../../context/AuthContext';
 
 const AuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -79,7 +79,7 @@ const AuthPage = () => {
           <Text style={styles.backButton}>{'<'} {isSignUp ? 'Sign Up' : 'Login'}</Text>
         </TouchableOpacity>
         <Image
-          source={require("../../assets/images/icon.jpg")}
+          source={require("../../../assets/images/icon.jpg")}
           resizeMode="contain"
           style={{
             width: 350,
@@ -173,7 +173,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#24294D',
+    backgroundColor: '#161622',
     paddingHorizontal: 20,
     justifyContent: 'center',
     alignContent: 'center',
@@ -212,8 +212,9 @@ const styles = StyleSheet.create({
     paddingLeft: 22,
   },
   input: {
-    backgroundColor: '#FFF',
+    backgroundColor: 'black',
     borderRadius: 10,
+    borderColor: '#FFA001',
     height: 50,
     width: "100%",
     paddingHorizontal: 15,

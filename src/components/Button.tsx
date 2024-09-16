@@ -2,9 +2,12 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-export default function CustomButton({ title, onPress }: { title: string, onPress: () => void }) {
+export default function CustomButton({ title, handlePress, containerStyles, textStyles, isLoading }: { title: string, onPress: () => void }) {
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity
+    activeOpacity={0.7}
+    style={styles.button}
+     onPress={handlePress}>  
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
@@ -12,14 +15,17 @@ export default function CustomButton({ title, onPress }: { title: string, onPres
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#24294D',
+    backgroundColor: '#161622',
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',
+    minHeight: 62,
+    justifyContent: 'center',
+    position: 'static',
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 16,
+    color: '#FFA001',
+    fontSize: 20,
     fontWeight: 'bold',
   },
 });

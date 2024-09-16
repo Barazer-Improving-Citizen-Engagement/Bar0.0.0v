@@ -1,13 +1,18 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Redirect, router, useRouter } from 'expo-router';
-import SignUpPage from './auth';
-import Home from './(tabs)/home';
+import { Redirect, router} from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { images } from '../constants'
+import CustomButton from '../components/Button';
+import { StatusBar } from 'expo-status-bar';
 
 const Landing = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView contentContainerStyle={{height: '100%'}}>
+
+      <View style={styles.logoView}></View>
       
       {/* Progress Bar */}
       <LinearGradient
@@ -19,22 +24,37 @@ const Landing = () => {
 
       {/* Logo */}
       <Image
-        source={{ uri: 'https://your-logo-url.com/logo.png' }} // Replace with your actual logo URL or import local image
+        // source={images.logo} // Replace with your actual logo URL or import local image
         style={styles.logo}
         resizeMode="contain"
       />
 
       {/* Text */}
+      <View style={styles.landingText}>
       <Text style={styles.title}>Welcome to Barazer.</Text>
       <Text style={styles.subtitle}>
         Get what you deserve, What you need all in one platform. We are the people, Your role is invaluable
       </Text>
-
+      </View>
+      
+<View >
       {/* Button */}
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/auth')}>
+      <CustomButton 
+      title='Continue with Email'
+      handlePress={()=> router.push('/home')}
+      />
+      {/* <TouchableOpacity 
+      // style={styles.button} 
+      // handlePress={() => router.push('/auth')}
+      >
+        <Link href="/home" style={styles.buttonText}>Get started</Link>
         <Text style={styles.buttonText} >GET STARTED</Text>
-      </TouchableOpacity>
-    </View>
+      </TouchableOpacity> */}
+      </View>
+      </ScrollView>
+      <StatusBar backgroundColor='#161622'
+      style='dark'/>
+    </SafeAreaView>
   );
 };
 
@@ -46,10 +66,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
+  logoView:{
+    width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 'auto',
+    paddingHorizontal: 4,
+    
+  },
+  landingText:{
+    position: 'relative',
+    marginTop: 5
+  },
+
   progressBar: {
     height: 5,
-    width: '30%',
+    width: '70%',
     borderRadius: 3,
+    marginTop: 100,
+    alignSelf: 'center',
     marginBottom: 20,
   },
   logo: {
@@ -60,27 +95,25 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#1A1E58',
+    color: '#161622',
     marginBottom: 10,
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    color: '#333',
+    color: '#161622',
     textAlign: 'center',
     marginBottom: 40,
     paddingHorizontal: 20,
   },
   button: {
-    backgroundColor: '#24294D',
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    borderRadius: 25,
+     marginTop: 4
   },
   buttonText: {
-    color: '#FFF',
-    fontSize: 16,
+    color: '#FFA001',
+    fontSize: 30,
     fontWeight: 'bold',
+    alignSelf: 'center'
   },
   skipContainer: {
     marginBottom: 20,

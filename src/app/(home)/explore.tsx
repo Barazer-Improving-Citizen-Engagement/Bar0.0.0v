@@ -1,8 +1,8 @@
 // home/explore.tsx
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import Header from '../../../components/Header';
-import CustomButton from '../../../components/Button';
+import Header from '../../components/Header';
+import CustomButton from '../../components/Button';
 import { useRouter } from 'expo-router';
 
 export default function Explore() {

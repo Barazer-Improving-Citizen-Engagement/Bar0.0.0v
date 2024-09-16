@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "Barazer0.0.1v",
-    "slug": "Barazer0.0.1v",
+    "name": "Barazer",
+    "slug": "barazer",
+    "schome":"barazer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.jpg",

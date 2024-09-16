@@ -1,6 +1,6 @@
 import { Stack } from "expo-router"
 
-const StackLayout = () => {
+const homeLayout = () => {
   return(
     <Stack>
     <Stack.Screen name="explore" options={{headerShadowVisible: false}}/>
@@ -9,4 +9,4 @@ const StackLayout = () => {
   )
 }
 
-export default StackLayout;
+export default homeLayout;
