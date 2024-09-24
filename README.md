@@ -1,6 +1,6 @@
 ### **README.md for Barazer Civic Platform**
 
-## DON'T PUSH TO MAIN BRANCH
+## DON'T PUSH TO MASTER BRANCH
 
 ---
 
