@@ -1,6 +1,5 @@
 import { StyleSheet, Text, TouchableHighlight, TouchableHighlightComponent, View } from 'react-native'
 import React from 'react'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { Link } from 'expo-router';
 
 type DetailedCardProps = {
@@ -17,9 +16,9 @@ DetailedCardProps ){
       
       </TouchableHighlight>
       <Text>{description}</Text>
-      <TouchableWithoutFeedback>
+      <TouchableHighlight>
         <Link href={'#'}>Learn more</Link>
-      </TouchableWithoutFeedback>
+      </TouchableHighlight>
     </View>
     
   )
@@ -28,8 +27,12 @@ DetailedCardProps ){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 5,
-    marginRight: 10
+    alignSelf: 'auto',
+    padding: 6,
+    marginRight: 10,
+    position: 'relative',
+    borderWidth: 1,
+    borderRadius: 10,  
     
   },
   detailCard: {

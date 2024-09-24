@@ -3,11 +3,13 @@ import { useContext, useEffect } from "react";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import 'react-native-reanimated';
-import { AuthContext } from "../../context/AuthContext";  // Import the AuthContext
+import { AuthContext, AuthProvider } from "../../context/AuthContext";  // Import the AuthContext
 import { ActivityIndicator, View, Text } from "react-native";
 import { StyleSheet } from "react-native";
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useColorScheme } from '../../hooks/useColorScheme';
+import { Provider } from "react-redux";
+import { Slot } from 'expo-router'
 
 export  default function RootLayout () {
   const authContext = useContext(AuthContext);
@@ -45,16 +47,20 @@ export  default function RootLayout () {
     );
   }
 
+ 
+
   return (
+ 
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme :DefaultTheme }>
     <Stack>
-      {/* Navigate to the appropriate stack based on authentication */}
       <Stack.Screen name="index" options={{headerShown: false}}/>
-      <Stack.Screen name={isAuthenticated ? "(tabs)" : "auth"} options={{ headerShown: false }} />
+      <Stack.Screen name="auth" options={{ headerShown: false}}/>
       <Stack.Screen name="(tabs)" options={{headerShown: false}} />
       <Stack.Screen name="+not-found" />
     </Stack>
     </ThemeProvider>
+   
+    
   );
 };
 

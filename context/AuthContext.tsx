@@ -15,11 +15,13 @@ export const AuthContext = createContext<AuthContextType>({
   loading: false,
 });
 
-interface AuthProviderProps {
-  children: ReactNode;
-}
+// interface AuthProviderProps {
+//   children: ReactNode;
+// }
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+export const AuthProvider = ({ children }
+  // : { children: React.ReactNode }`
+) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -60,3 +62,4 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     </AuthContext.Provider>
   );
 };
+export default AuthProvider;

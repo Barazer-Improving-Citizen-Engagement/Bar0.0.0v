@@ -16,19 +16,59 @@ export default function Home() {
   return (
     <SafeAreaView>
       
-    <View contentContainerStyle={styles.container}>
-      <ScrollView>
+    <ScrollView contentContainerStyle={styles.container}>
+      
       <View style={styles.lists}>
        {/* <View> */}
         <FlatList
       data={[{ id : 1}]}
       keyExtractor={(item) => item.$id}
-      renderItem={({ item }) => <DetailedCard title="title" description="this is a detailed description"/>}
+      renderItem={({ item }) => <DetailedCard title="Transparency" description="Stay informed about government actions"/>}
+      numColumns={2}
+      contentContainerStyle={{ gap: 5, padding: 3}}
+      columnWrapperStyle= {{ gap: 5 }}
+      />
+       <FlatList
+      data={[{ id : 1}]}
+      keyExtractor={(item) => item.$id}
+      renderItem={({ item }) => <DetailedCard title="Citizen Participation" description="Crowdsourced solutions for public engagement"/>}
+      numColumns={2}
+      contentContainerStyle={{ gap: 5, padding: 3}}
+      columnWrapperStyle= {{ gap: 5 }}
+      />
+       {/* <FlatList
+      data={[{ id : 1}]}
+      keyExtractor={(item) => item.$id}
+      renderItem={({ item }) => <DetailedCard title="Advanced Data Visualization" description="Stay informed about government actions, policies, and outcomes. Explore government data in real-time."/>}
       numColumns={2}
       contentContainerStyle={{ gap: 10, padding: 10}}
       columnWrapperStyle= {{ gap: 10 }}
-      />
-       <FlatList
+      /> */}
+       {/* <DetailedCard
+              title="Transparency"
+              description="Stay informed about government actions"
+              // imageUrl="https://via.placeholder.com/300x200"
+              // link="/transparency"
+            />
+            <DetailedCard
+              title="Citizen Participation"
+              description="Crowdsourced solutions for public engagement."
+              // imageUrl="https://via.placeholder.com/300x200"
+              // link="/mobile-app"
+            />
+            <DetailedCard
+              title="Advanced Data Visualization"
+              description="Stay informed about government actions, policies, and outcomes. Explore government data in real-time."
+              // imageUrl="https://via.placeholder.com/300x200"
+              // link="/transparency"
+            />
+            <DetailedCard
+              title="Data Donation"
+              description="Contribute data securely for public insights."
+              // imageUrl="https://via.placeholder.com/300x200"
+              // link="/data-donate"
+            /> */}
+       {/* <FlatList
       data={[{ id : 1}]}
       keyExtractor={(item) => item.$id}
       renderItem={({ item }) => <DetailedCard title="title" description="this is a detailed description"/>}
@@ -59,7 +99,7 @@ export default function Home() {
       numColumns={2}
       contentContainerStyle={{ gap: 10, padding: 10}}
       columnWrapperStyle= {{ gap: 10 }}
-      />
+      /> */}
  
       {/* <View style={styles.section}>
         <Text style={styles.text}>
@@ -88,8 +128,8 @@ export default function Home() {
       </Text>
       
     </View>
+    
     </ScrollView>
-    </View>
     </SafeAreaView>
   );
 } 
@@ -104,7 +144,7 @@ const styles = StyleSheet.create({
   lists:{
     borderColor: 'amber',
     textAlign: 'center',
-    flexDirection: 'row',
+    flexDirection: 'column',
     flexWrap: 'wrap'
   },
   text: { fontSize: 18, lineHeight: 28, marginBottom: 20 },

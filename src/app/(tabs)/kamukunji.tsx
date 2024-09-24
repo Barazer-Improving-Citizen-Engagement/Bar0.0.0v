@@ -45,7 +45,7 @@ export default function Kamukunji() {
           </View>
         )}
       />
-      <Footer />
+      {/* <Footer /> */}
     </View>
   );
 }

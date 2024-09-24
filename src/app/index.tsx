@@ -40,8 +40,9 @@ const Landing = () => {
 <View >
       {/* Button */}
       <CustomButton 
+      style={styles.contButton}
       title='Continue with Email'
-      handlePress={()=> router.push('/home')}
+      handlePress={()=> router.push('/auth')}
       />
       {/* <TouchableOpacity 
       // style={styles.button} 
@@ -53,7 +54,7 @@ const Landing = () => {
       </View>
       </ScrollView>
       <StatusBar backgroundColor='#161622'
-      style='dark'/>
+      style='light'/>
     </SafeAreaView>
   );
 };
@@ -108,6 +109,10 @@ const styles = StyleSheet.create({
   },
   button: {
      marginTop: 4
+  },
+  contButton:{
+    marginTop: 40
+
   },
   buttonText: {
     color: '#FFA001',
